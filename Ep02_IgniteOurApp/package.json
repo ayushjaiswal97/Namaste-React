@@ -1,0 +1,30 @@
+{
+  "name": "ep02_igniteourapp",
+  "version": "1.0.0",
+  "description": "This is Namaste React",
+  "keywords": [],
+  "homepage": "https://github.com/ayushjaiswal97/Namaste-React#readme",
+  "bugs": {
+    "url": "https://github.com/ayushjaiswal97/Namaste-React/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayushjaiswal97/Namaste-React.git"
+  },
+  "license": "ISC",
+  "author": "Ayush jaiswal",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions"
+  ]
+}
