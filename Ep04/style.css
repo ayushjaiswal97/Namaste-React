@@ -1,0 +1,92 @@
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e0e0e0;
+    background: #f8fafc;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+}
+
+.logo-container .logo {
+    height: 100%;
+    width: 80px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.nav-items {
+    padding: 0 32px;
+}
+
+.nav-items > ul {
+    font-family: "Gilroy";
+    font-size: 18px;
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-items > ul > li {
+    padding: 8px 16px;
+    margin: 0;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.nav-items > ul > li:hover {
+    background: #e0e7ef;
+    color: #e96625;
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: center; 
+}
+
+.res-card {
+    width: 210px;
+    height: 310px;
+    margin: 5px;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: box-shadow 0.2s;
+}
+
+.res-card:hover {
+    transform: translateY(-2px);
+    background: #0579ee;
+    color: rgba(228, 107, 21, 0.573);
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(188, 83, 7, 0.225);
+}
+
+.search {
+    padding: 14px 20px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    font-size: 16px;
+    outline: none;
+}
+
+.res-logo {
+    width: 200px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
