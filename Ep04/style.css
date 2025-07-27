@@ -1,4 +1,5 @@
 .header {
+    color: #333;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -15,6 +16,7 @@
 }
 
 .logo-container .logo {
+    display: block;
     height: 100%;
     width: 80px;
     border-radius: 8px;
@@ -45,30 +47,36 @@
     color: #e96625;
 }
 
+.body {
+    font-family: "Gilroy";
+}
+
 .res-container {
     display: flex;
     flex-wrap: wrap;  
-    justify-content: center; 
 }
 
 .res-card {
     width: 210px;
-    height: 310px;
-    margin: 5px;
-    padding: 12px;
+    margin: 10px;
+    padding: 10px;
+    letter-spacing: 0.1px;
     border: 2px solid #e0e0e0;
     border-radius: 10px;
     background: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     transition: box-shadow 0.2s;
+    color: #333;
+    text-decoration: none;
 }
 
 .res-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px) scale(1.02) ;
     background: #0579ee;
-    color: rgba(228, 107, 21, 0.573);
     cursor: pointer;
-    box-shadow: 0 4px 16px rgba(188, 83, 7, 0.225);
+    border: 1px solid #272525;
+    box-shadow: 0 4px 16px rgba(46, 41, 38, 0.295);
+    
 }
 
 .search {
