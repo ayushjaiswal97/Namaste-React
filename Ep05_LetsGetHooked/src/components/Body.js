@@ -5,41 +5,7 @@ import { useState } from 'react';
 
 const Body = () => {
     // Local State Variable - Super Powefull Variable 
-    const [listOfRestaurants, setListOfRestaurants] = useState([
-        {
-        data: {
-            id: "1",
-            name: "Restaurant A",
-            imageId: "bdcd233971b7c81bf77e1fa4471280eb",
-            cuisines: ["Indian", "Chinese"],
-            costForTwo: 50000,
-            deliveryTime: 30,
-            avgRating: 3.8,
-        }
-    },
-     {
-        data: {
-            id: "2",
-            name: "Restaurant B",
-            cuisines: ["Italian", "Mexican"],
-            costForTwo: 60000,
-            deliveryTime: 25,
-            imageId: "bdcd233971b7c81bf77e1fa4471280eb",
-            avgRating: 4.2,
-        }
-    },
-     {
-        data: {
-            id: "3",
-            name: "Restaurant C",
-            cuisines: ["American", "French"],
-            costForTwo: 70000,
-            deliveryTime: 20,
-            imageId: "bdcd233971b7c81bf77e1fa4471280eb",
-            avgRating: 4.8,
-        }
-    }
-]);
+    const [listOfRestaurants, setListOfRestaurants] = useState(resList);
     
     return (
         <div className="body">
