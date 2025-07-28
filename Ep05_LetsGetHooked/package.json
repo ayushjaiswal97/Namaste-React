@@ -1,0 +1,20 @@
+{
+  "name": "ep05_letsgethooked",
+  "version": "1.0.0",
+  "description": "This is react application",
+  "license": "ISC",
+  "author": "Ayush Jaiswal",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}
