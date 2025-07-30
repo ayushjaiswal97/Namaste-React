@@ -20,7 +20,7 @@ import ReactDOM from "react-dom/client";
  *  -->Contact
  */
 
-const Header = () => {
+export const Header = () => {
     return (
         <div className="header">
             <div className="logo-container">
@@ -794,7 +794,7 @@ const resList =  [
   },
 ];
 
-const Body = () => {
+export const Body = () => {
     return (
         <div className="body">
             <div className="search">Search</div>
