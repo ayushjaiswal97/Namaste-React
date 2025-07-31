@@ -26,3 +26,7 @@
 - JSX => Babel Transpiles it to React.createElement => ReactElement-JS Object => HTML (render)-(Browser Understands)
 
 - MultiLine JSX - wrap with ()
+
+-- Components (2 - types)
+// class Based Components
+// Functional Components
