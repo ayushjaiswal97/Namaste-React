@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 // Using - JSX
+// How to add class in jsx -className
 const jsxHeading = <h1 id="heading">Namaste React using JSX</h1>;
 console.log(jsxHeading);
 
