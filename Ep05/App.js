@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const Title = () => (
+// put react element inside the component
+const title = (
   <h1 className="head" tabIndex="5">
     Namaste React using JSX 🚀
   </h1>
@@ -9,7 +10,7 @@ const Title = () => (
 
 const HeadingComponent = () => (
   <div id="container">
-    <Title />
+    {title}
     <h1 className="heading">Namaste React Functional Component</h1>
   </div>
 );
