@@ -2,10 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 // Using - JSX
-// MultiLine JSX - wrap with ()
-  const jsxHeading = (<h1
+// React Element
+  const jsxHeading = (
+  <h1
    className="heading">Namaste React using JSX
-  </h1>);
+  </h1>
+  );
 
   console.log(jsxHeading);
 
