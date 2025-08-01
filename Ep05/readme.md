@@ -30,3 +30,20 @@
 -- Components (2 - types)
 // class Based Components
 // Functional Components
+
+// Day - 4 
+/**
+ * Header
+ * -LOGO
+ * -Nav-links
+ * Body
+ * -Search
+ * -Restautrant Container
+ * --Restaurant Card
+ * ---Img
+ * ---Name of res, star rating, cuisine, delvery time
+ * Footer
+ * -Links
+ * -Contact
+ * -Address
+ */
