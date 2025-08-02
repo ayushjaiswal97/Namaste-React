@@ -53,30 +53,29 @@
 
 .res-container {
     display: flex;
-    flex-wrap: wrap;  
+    flex-wrap: wrap;
 }
 
 .res-card {
-    width: 210px;
     margin: 10px;
     padding: 10px;
-    letter-spacing: 0.1px;
+    width: 230px;
     border: 2px solid #e0e0e0;
     border-radius: 10px;
     background: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    transition: box-shadow 0.2s;
     color: #333;
     text-decoration: none;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .res-card:hover {
-    transform: translateY(-1px) scale(1.02) ;
+    transform: translateY(-1px) scale(1.02);
     background: #0579ee;
     cursor: pointer;
     border: 1px solid #272525;
     box-shadow: 0 4px 16px rgba(46, 41, 38, 0.295);
-    
 }
 
 .search {
