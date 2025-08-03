@@ -31,7 +31,7 @@
 // class Based Components
 // Functional Components
 
-// Day - 4 
+// Food Ordering App - yummzi
 /**
  * Header
  * -LOGO
@@ -49,3 +49,14 @@
  */
 
  // Not using keys (not acceptable) <<<< index as key <<<<<<< unique id (best practice)
+
+ // Two types of Export/Import
+
+- default Export/Import
+ export default Component;
+ import Component from "path";
+
+- Named Export/Import
+ export const Component;
+ import{ Component } from "path";
+

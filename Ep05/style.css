@@ -19,7 +19,7 @@
 .logo-container .logo {
     display: block;
     height: 100%;
-    width: 80px;
+    width: 70px;
     border-radius: 8px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
@@ -97,3 +97,40 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.filter{
+    padding: 14px 20px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-btn{
+    padding: 10px 20px;
+    background-color: #e96625;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    letter-spacing: .4px;
+    color: #e0e7ef;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    transform-origin: center;
+    outline: none;
+}
+
+.filter-btn:hover{
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    background-color: #f07234;
+}
+
+.filter-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
