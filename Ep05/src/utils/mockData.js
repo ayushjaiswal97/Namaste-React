@@ -10,7 +10,7 @@ costForTwo: "₹350 for two",
 cuisines: [
 "Pizzas"
 ],
-avgRating: 4.3,
+avgRating: 4,
 parentId: "721",
 avgRatingString: "4.3",
 totalRatingsString: "9.7K+",

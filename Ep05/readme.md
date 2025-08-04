@@ -60,3 +60,9 @@
  export const Component;
  import{ Component } from "path";
 
+ # React Hooks
+ (Normal JS utility functions)
+ - two important hooks
+  -useState()
+  -useEffect()
+

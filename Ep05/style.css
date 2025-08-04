@@ -107,8 +107,8 @@
 }
 
 .filter-btn{
-    padding: 10px 20px;
-    background-color: #e96625;
+    padding: 6px 12px;
+    background-color: #db7036;
     border-radius: 5px;
     cursor: pointer;
     border: none;
@@ -125,7 +125,7 @@
 .filter-btn:hover{
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    background-color: #f07234;
+    background-color: #c54606e9;
 }
 
 .filter-btn:active {
