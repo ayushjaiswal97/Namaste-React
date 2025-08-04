@@ -8,7 +8,10 @@ const Body = () =>{
 // const [listOfRestaurants, setListOfRestaurants] = useState(resList);
 const arr = useState(resList);
 
-const [listOfRestaurants, setListOfRestaurants] = arr;
+// const [listOfRestaurants, setListOfRestaurants] = arr;
+
+const listOfRestaurants = arr[0];
+const setListOfRestaurants = arr[1];
  
 return (
     <div className="body">
