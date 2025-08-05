@@ -148,4 +148,9 @@
 .login{
     padding: 0 20px;
     cursor: pointer;
+    background-color: #db7036;
+    border: none;
+    font-family: "Gilroy";
+    font-size: 16px;
+    border-radius: 5px;
 }
