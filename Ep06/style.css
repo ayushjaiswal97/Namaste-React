@@ -77,15 +77,6 @@
     box-shadow: 0 4px 16px rgba(46, 41, 38, 0.295);
 }
 
-.search {
-    padding: 14px 20px;
-    margin-top: 10px;
-    border-radius: 6px;
-    border: 1px solid #e0e0e0;
-    font-size: 16px;
-    outline: none;
-}
-
 .res-logo {
     width: 200px;
     height: 140px;
@@ -98,6 +89,7 @@
 }
 
 .filter{
+    display: flex;
     padding: 14px 20px;
     margin-top: 10px;
     border-radius: 6px;
@@ -105,8 +97,31 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.search {
+    font-family: "Gilroy";
+}
+
+.search-button {
+   padding: 8px;
+   background-color: #f0f0f0;
+   border: 1px solid #333;
+   border-radius: 5px;
+}
+
+.search-btn {
+    padding: 5px 10px;
+    margin-left: 2px;
+    border: 2px solid rgba(244, 165, 96, 0.592);
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    border: 2px solid sandybrown;
+}
+
 .filter-btn{
     padding: 6px 12px;
+    margin-left: 10px;
     background-color: #db7036;
     border-radius: 5px;
     cursor: pointer;
