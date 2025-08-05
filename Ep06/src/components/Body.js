@@ -22,7 +22,7 @@
     setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
 
-  // Conditional Rendering
+  // Conditional Rendering 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
