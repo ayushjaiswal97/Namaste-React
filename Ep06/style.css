@@ -1,5 +1,5 @@
 .header {
-    font-family: "gilroy";
+    font-family: sans-serif;
     color: #161A1F;
     width: 100%;
     display: flex;
@@ -25,7 +25,7 @@
 }
 
 .nav-items {
-    padding: 0 32px;
+    padding: 0 30px;
 }
 
 .nav-items > ul {
@@ -35,7 +35,7 @@
 }
 
 .nav-items > ul > li {
-    padding: 8px 16px;
+    padding: 5px 10px;
     margin: 0;
     border-radius: 6px;
     transition: background 0.2s, color 0.2s;
@@ -43,7 +43,6 @@
 }
 
 .nav-items > ul > li:hover {
-    background: #e0e7ef;
     color: #e96625;
 }
 
@@ -133,4 +132,15 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.shimmer-card{
+    margin: 20px;
+    width: 210px;
+    height: 400px;
+    border-radius: 6px;
+    background-color: #f0f0f0;
+}
