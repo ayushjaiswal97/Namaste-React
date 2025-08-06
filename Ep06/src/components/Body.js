@@ -1,9 +1,9 @@
   import RestaurantCard  from "./RestaurantCard";
-  import { useEffect, useState } from "react";
-  import Shimmer from "./Shimmer";
+import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
-  const Body = () =>{
-    console.log("BodyRendered")
+const Body = () =>{
+  console.log("BodyRendered")
   // local state variable - super powerful variable  
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
@@ -50,9 +50,10 @@
           <button className="filter-btn"
           onClick={() => {
             // Filter logic here
+            // Bug fix: Update filteredRestaurant instead of listOfRestaurants
             const filteredList = listOfRestaurants.filter((res) => 
             res.info.avgRating > 4.5);
-            setListOfRestaurants(filteredList);
+            setFilteredRestaurant(filteredList);
           }}>
           Top Rated Restaurant
           </button>
@@ -66,6 +67,9 @@
     );
   };
 
-  export default Body;
+
+export default Body;
+ 
 
   
+
