@@ -2,11 +2,11 @@
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 
-const Body = () =>{
-  console.log("BodyRendered")
-// local state variable - super powerful variable  
-const [listOfRestaurants, setListOfRestaurants] = useState([]);
-const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+  const Body = () =>{
+    console.log("BodyRendered")
+  // local state variable - super powerful variable  
+  const [listOfRestaurants, setListOfRestaurants] = useState([]);
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
 const [searchText, setSearchText] = useState("");
 
@@ -45,28 +45,28 @@ return listOfRestaurants.length === 0 ? (
           // SearchText is a local state variable
           console.log(searchText);
 
-          const filteredRestaurants = listOfRestaurants.filter((res) => 
-          res.info.name.toLowerCase().includes(searchText.toLowerCase()));
-          setFilteredRestaurant(filteredRestaurants);
-        }}>Search</button>
+            const filteredRestaurants = listOfRestaurants.filter((res) => 
+            res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+            setFilteredRestaurant(filteredRestaurants);
+          }}>Search</button>
+        </div>
+          <button className="filter-btn"
+          onClick={() => {
+            // Filter logic here
+            const filteredList = listOfRestaurants.filter((res) => 
+            res.info.avgRating > 4.5);
+            setListOfRestaurants(filteredList);
+          }}>
+          Top Rated Restaurant
+          </button>
+        </div>
+        <div className="res-container">
+          {filteredRestaurant.map((restaurant) => (
+          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          ))}
+        </div>
       </div>
-        <button className="filter-btn"
-        onClick={() => {
-          // Filter logic here
-          const filteredList = listOfRestaurants.filter((res) => 
-          res.info.avgRating > 4.5);
-          setFilteredRestaurant(filteredList);
-        }}>
-        Top Rated Restaurant
-        </button>
-      </div>
-      <div className="res-container">
-        {filteredRestaurant.map((restaurant) => (
-        <RestaurantCard key={restaurant.info.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
+    );
+  };
 
-export default Body;
+  export default Body;
