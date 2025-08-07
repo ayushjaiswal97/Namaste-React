@@ -4,11 +4,15 @@ import Shimmer from "./Shimmer";
 
 const Body = () =>{
   console.log("BodyRendered")
+
   // local state variable - super powerful variable  
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
   const [searchText, setSearchText] = useState("");
+
+  // Whenever state variables updates, react triggers a reconciliation cycle (re-render the components).
+  console.log("Body Rendered");
 
   useEffect (() =>{
     fetchData();
