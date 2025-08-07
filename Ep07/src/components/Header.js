@@ -6,10 +6,10 @@ const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("login");
   console.log("Header Rendered");
 
-  // if dependency array is empty = [] => useEffect is called on initial render(just once)
+  // if dependency array is [btnNameReact] => useEffect is called everytime btnNameReact is updated
   useEffect(() => {
     console.log("useEffect called");
-  }, []);
+  }, [btnNameReact]);
 
       return (
           <div className="header">
