@@ -1,18 +1,14 @@
 import RestaurantCard  from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () =>{
-  console.log("BodyRendered")
-
   // local state variable - super powerful variable  
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
   const [searchText, setSearchText] = useState("");
-
-  // Whenever state variables updates, react triggers a reconciliation cycle (re-render the components).
-  console.log("Body Rendered");
 
   useEffect (() =>{
     fetchData();
@@ -44,11 +40,6 @@ const Body = () =>{
             setSearchText(e.target.value);
           }}/>
           <button className="search-btn" onClick={() => {
-            // Search logic here
-            // Filter the restaurant cards and update the UI
-            // SearchText is a local state variable
-            console.log(searchText);
-
             const filteredRestaurants = listOfRestaurants.filter((res) => 
               res.info.name.toLowerCase().includes(searchText.toLowerCase()));
             setFilteredRestaurant(filteredRestaurants);
@@ -66,7 +57,11 @@ const Body = () =>{
       </div>
       <div className="res-container">
         {filteredRestaurant.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+         <Link 
+          key={restaurant.info.id}
+         to={"/restaurants/" + restaurant.info.id}>
+         <RestaurantCard resData={restaurant} 
+         /></Link>  
         ))}
       </div>
     </div>
