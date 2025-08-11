@@ -170,3 +170,9 @@
     border-radius: 5px;
 }
 
+.user-card{
+    padding: 0 20px;
+    font-size: 14px;
+    font-family: "gilroy";
+    border: 2px solid black;
+}
