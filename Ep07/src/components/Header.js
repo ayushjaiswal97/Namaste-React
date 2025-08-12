@@ -7,8 +7,8 @@ const Header = () => {
 
   // if dependency array is [btnNameReact] => useEffect is called everytime btnNameReact is updated
   useEffect(() => {
-    console.log("useEffect called");
-  }, []);
+    
+  }, [btnNameReact]);
 
       return (
           <div className="header">
