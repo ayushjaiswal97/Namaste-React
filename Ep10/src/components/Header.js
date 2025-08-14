@@ -9,38 +9,42 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
       return (
-          <div className="header">
-          <div className="logo-container">
-              <img className="logo" src={LOGO_URL} alt="logo" />
-          </div>
-          <div className="nav-items">
-              <ul>
-              <li>
-                Status : { onlineStatus ? "🟢" : "🔴"}
-              </li>
-                <li>
-                <Link to="/">Home</Link>
+          <div className="flex justify-between items-center px-4 py-2 bg-green-50 shadow-lg">
+            <div className="flex items-center">
+              <img className="w-20 h-auto" 
+                   src={LOGO_URL} 
+                   alt="logo" />
+            </div>
+            <nav className="flex items-center">
+              <ul className="flex items-center space-x-6">
+                <li className="text-gray-700">
+                  Status : { onlineStatus ? "🟢" : "🔴"}
                 </li>
-                <li>
-                <Link to="/about">About Us</Link>
+                <li className="hover:text-green-600 transition-colors">
+                  <Link to="/">Home</Link>
                 </li>
-                <li>
-                <Link to="/contact">Contact Us</Link>
+                <li className="hover:text-green-600 transition-colors">
+                  <Link to="/about">About Us</Link>
                 </li>
-                <li>
-                <Link to="/grocery">Grocery</Link>
+                <li className="hover:text-green-600 transition-colors">
+                  <Link to="/contact">Contact Us</Link>
                 </li>
-                <li>Cart</li>
-                 <button className="login"
+                <li className="hover:text-green-600 transition-colors">
+                  <Link to="/grocery">Grocery</Link>
+                </li>
+                <li className="hover:text-green-600 transition-colors">Cart</li>
+                <button 
+                  className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors"
                   onClick={() => {
-                  btnNameReact === "login" 
-                  ? setBtnNameReact("logout")
-                  : setBtnNameReact("login");
-                  }} >
+                    btnNameReact === "login" 
+                      ? setBtnNameReact("logout")
+                      : setBtnNameReact("login");
+                  }}
+                >
                   {btnNameReact}
-                 </button>
+                </button>
               </ul>
-          </div>
+            </nav>
           </div>
       )
   }
