@@ -1,20 +1,13 @@
-import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
+import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
-  // Local State variable - 
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
-
   const [searchText, setSearchText] = useState("");
-
-  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
-
-  //Whenever state variable update, react triggers a reconciliation cycle(re-renders the components),
-  console.log("Body Renderd" ,listOfRestaurants);
 
   useEffect(() => {
     fetchData();
@@ -86,14 +79,7 @@ const Body = () => {
             to={"/restaurants/" + restaurant.info.id}
             className="transform hover:scale-105 transition-transform duration-200"
           >
-             {/** if the restaurant is promoted then add a promoted label to it */}
-             {
-              restaurant.info.promoted ? (
-               <RestaurantCardPromoted resData={restaurant}/> 
-               ):(
-               <RestaurantCard resData={restaurant} />
-               )}
-            
+            <RestaurantCard resData={restaurant} />
           </Link>
         ))}
       </div>
