@@ -2,6 +2,8 @@ import ItemList from "./components/ItemList";
 import { useState } from 'react';
 
 const RestaurantCategory = ({data}) =>{
+
+    // UnControlled Components
     const [showItems, setShowItems] = useState(false);
 
     const handleClick = () => {
