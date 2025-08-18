@@ -21,18 +21,24 @@ const RestaurantMenu = () => {
             "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
-    // console.log(categories);
+    const toggleCategory = (index) => {
+        if(index === showIndex) {
+            setShowIndex(null); // collapse if clicked category is already expanded
+        } else {
+            setShowIndex(index); // expand clicked category
+        }
+    };
+
     return (
         <div className="text-center">
             <h1 className="font-bold my-5 text-2xl">{name}</h1>
             <p className="font-bold text-lg">{cuisines?.join(", ")} - {costForTwoMessage}</p>
             {categories.map((category, index) => (
-                // Controlled Components
                 <RestaurantCategory 
                     key={category?.card?.card.title} 
                     data={category?.card?.card}
-                    showItems={index === showIndex ? true : false}
-                    setShowIndex={() => setShowIndex(index)}
+                    showItems={index === showIndex}
+                    setShowIndex={() => toggleCategory(index)}
                 />
             ))}
         </div>
