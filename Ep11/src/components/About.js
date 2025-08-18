@@ -1,19 +1,20 @@
 import User from "./User";
 import UserClass from "./UserClass";
 import { Component } from "react";
+import UserContext from "../utils/UserContext";
 
 class About extends Component {
   constructor(props) {
     super(props);
-    console.log("Parent constructor");
+    // console.log("Parent constructor");
   }
 
   componentDidMount() {
-    console.log("Parent ComponentDidMount");
+    // console.log("Parent ComponentDidMount");
   }
 
   render() {
-    console.log("Parent Render");
+    // console.log("Parent Render");
     return (
       <div className="min-h-screen bg-gray-100">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
@@ -21,6 +22,15 @@ class About extends Component {
             <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
               About Us
             </h2>
+            <div>
+              <UserContext.Consumer>
+                {({ loggedInUser }) => (
+                  <h1 className="text-xl font-bold">
+                    {loggedInUser}
+                  </h1>
+               )}
+              </UserContext.Consumer>
+            </div>
             <p className="mt-4 text-lg text-gray-500">
               Delivering happiness to your doorstep
             </p>
