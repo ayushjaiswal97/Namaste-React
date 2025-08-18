@@ -1,8 +1,10 @@
 import RestaurantCard from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { SWIGGY_API } from "../utils/constant";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -15,8 +17,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://corsproxy.io/https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.062017821881533&lng=72.54186391723825&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+     SWIGGY_API);
     const json = await data.json();
     setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -31,6 +32,8 @@ const Body = () => {
       </h1>
     )
   };
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
@@ -60,6 +63,16 @@ const Body = () => {
             </button>
           </div>
         </div>
+
+        <div className="search px-6 py-2 flex items-center">
+          <label>UserName : </label>
+          <input 
+            className="border border-black p-1 m-1 border-b-gray-400 rounded"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </div>
+        
         <button
           className="px-6 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition-colors duration-200"
           onClick={() => {
