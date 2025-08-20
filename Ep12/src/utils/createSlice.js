@@ -7,6 +7,12 @@ const cartSlice = createSlice({
     },
     reducers:{
         addItems: (state, action) =>{
+
+            // vanialla(older) Redux => DON'T MUTATE STATE
+            const newState = [...state];
+            newState.items.push(action.payload);
+            return newState;
+
             // mutating the state here
             state.items.push(action.payload);
         },
