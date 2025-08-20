@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("login");
@@ -10,7 +11,11 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   const {loggedInUser} = useContext(UserContext);
-  console.log(loggedInUser);
+  // console.log(loggedInUser);
+
+  // Subscribing to the Store using a Selector
+  const cartIems = useSelector((store) => store.cart.items);
+  console.log(cartIems);
 
       return (
           <div className="flex justify-between items-center px-4 py-2 bg-green-50 shadow-lg">
@@ -20,23 +25,25 @@ const Header = () => {
                    alt="logo" />
             </div>
             <nav className="flex items-center">
-              <ul className="flex items-center space-x-6">
-                <li className="text-gray-700">
+              <ul className="flex items-center space-x-6 cursor-pointer">
+                <li className="text-lg text-gray-700">
                   Status : { onlineStatus ? "🟢" : "🔴"}
                 </li>
-                <li className="hover:text-green-600 transition-colors">
+                <li className="text-lg hover:text-green-600 transition-colors">
                   <Link to="/">Home</Link>
                 </li>
-                <li className="hover:text-green-600 transition-colors">
+                <li className="text-lg hover:text-green-600 transition-colors">
                   <Link to="/about">About Us</Link>
                 </li>
-                <li className="hover:text-green-600 transition-colors">
+                <li className="text-lg hover:text-green-600 transition-colors">
                   <Link to="/contact">Contact Us</Link>
                 </li>
-                <li className="hover:text-green-600 transition-colors">
+                <li className="text-lg hover:text-green-600 transition-colors">
                   <Link to="/grocery">Grocery</Link>
                 </li>
-                <li className="hover:text-green-600 transition-colors">Cart</li>
+                <li className="text-xl">
+                  <Link to="/cart">🛒{cartIems.length}</Link>
+                </li>
                 <button 
                   className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors"
                   onClick={() => {

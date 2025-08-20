@@ -1,7 +1,16 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constant";
+import { addItems } from "../utils/createSlice";
 
 const ItemList = ({ items }) => {
-    // console.log(items);
+    
+  const dispatch = useDispatch();
+
+    const handleAddItem = (item) => {
+        // Dispatch an Action
+        dispatch(addItems(item));
+    };  
+    
     return(
         <div className="grid gap-4 p-4">
             {items.map((item) => (
@@ -22,10 +31,11 @@ const ItemList = ({ items }) => {
                   <img src={CDN_URL + item.card.info.imageId} 
                        className="w-full h-28 object-cover rounded-lg shadow-sm"
                        alt={item.card.info.name}/>
-                   <button className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 
-                                    bg-white text-green-600 px-4 py-2 rounded-md text-sm font-semibold
-                                    shadow-md transition-all duration-300 hover:bg-green-50 hover:scale-105
-                                    focus:outline-none focus:ring-2 focus:ring-green-500">
+                   <button className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-white
+                  text-green-600 px-4 py-2 rounded-md text-sm font-semibold shadow-md transition-all
+                   duration-300 hover:bg-green-50 hover:scale-105 focus:outline-none 
+                   focus:ring-2 focus:ring-green-500"
+                    onClick={() =>handleAddItem(item)}>
                     ADD+
                     </button> 
                  </div>
