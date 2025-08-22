@@ -19,6 +19,18 @@ it("Should load Header component with a login Button", () => {
     expect(logginButton).toBeInTheDocument();
 });
 
+it("Should load Header component with cart items 0", () => {
+    render(
+        <BrowserRouter>
+         <Provider store={appStore}>
+          <Header/>
+         </Provider>
+        </BrowserRouter>
+     );
+    const cartItems = screen.getByText("🛒0");
+    expect(cartItems).toBeInTheDocument();
+});
+
 it("Should load Header component with cart items", () => {
     render(
         <BrowserRouter>
