@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import Header from "../Header";
 import appStore from "../../utils/appStore";
 import { Provider } from "react-redux";
@@ -41,4 +41,23 @@ it("Should load Header component with cart items", () => {
      );
     const cartItems = screen.getByText(/🛒/); // Using regex to match cart icon
     expect(cartItems).toBeInTheDocument();
+});
+
+
+it("Should Change Login Button to Logout on Click", () => {
+    render(
+        <BrowserRouter>
+         <Provider store={appStore}>
+          <Header/>
+         </Provider>
+        </BrowserRouter>
+    );
+
+    const logginButton = screen.getByRole("button", {name: "login"});
+
+    fireEvent.click(logginButton);
+
+    const logoutButton = screen.getByRole("button", {name: "logout"});
+    
+    expect(logoutButton).toBeInTheDocument();
 });
