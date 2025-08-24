@@ -5,6 +5,7 @@ import MOCK_DATA from "../mocks/mockResListData.json";
 import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 
+// make an fake API call
 global.fetch = jest.fn(() => {
    return Promise.resolve({
         json:() => {
@@ -13,7 +14,7 @@ global.fetch = jest.fn(() => {
     });
 });
 
-it("Should render the Body Components with Search", async () => {
+it("Should Search Res List for burger text input ", async () => {
     await act(async () => 
         render(
         <BrowserRouter>
@@ -21,13 +22,17 @@ it("Should render the Body Components with Search", async () => {
         </BrowserRouter>
         )
     );
-  const searchBtn = screen.getByRole("button", { name: "Search" });
 
-  const searchInput = screen.getByTestId("searchInput");
-  console.log(searchInput);
-  
+    const cardsBeforeSearch = screen.getAllByTestId("resCard");
+    expect(cardsBeforeSearch.length).toBe(20);
 
-  expect(searchBtn).toBeInTheDocument();
+    const searchBtn = screen.getByRole("button", { name: "Search" });
+    const searchInput = screen.getByTestId("searchInput");
 
+    fireEvent.change(searchInput, {target: { value: "pizza"}});
+    fireEvent.click(searchBtn);
+
+    const searchAfterClick = screen.getAllByTestId("resCard");
+    expect(searchAfterClick.length).toBe(3);
 });
 
