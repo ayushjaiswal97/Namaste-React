@@ -43,7 +43,6 @@ it("Should load Header component with cart items", () => {
     expect(cartItems).toBeInTheDocument();
 });
 
-
 it("Should Change Login Button to Logout on Click", () => {
     render(
         <BrowserRouter>
@@ -54,10 +53,7 @@ it("Should Change Login Button to Logout on Click", () => {
     );
 
     const logginButton = screen.getByRole("button", {name: "login"});
-
     fireEvent.click(logginButton);
-
     const logoutButton = screen.getByRole("button", {name: "logout"});
-    
     expect(logoutButton).toBeInTheDocument();
 });

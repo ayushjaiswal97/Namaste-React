@@ -10,7 +10,7 @@ const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
-
+  
   useEffect(() => {
     fetchData();
   }, []);
@@ -44,6 +44,7 @@ const Body = () => {
           <div className="flex items-center">
             <input
               type="text"
+              data-testid = "searchInput"
               className="w-full px-4 py-2 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 m-1"
               value={searchText}
               placeholder="Search restaurants..."

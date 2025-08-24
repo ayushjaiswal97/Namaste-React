@@ -17,7 +17,8 @@ const RestaurantCard = (props) => {
   } = resData?.info;       
 
   return (
-    <div className="m-4 p-4 w-[280px] rounded-2xl bg-gray-100 hover:bg-gray-200 shadow-xl transition duration-300 ease-in-out">
+    <div className="m-4 p-4 w-[280px] rounded-2xl bg-gray-100 hover:bg-gray-200 shadow-xl transition duration-300 ease-in-out"
+    data-testid="resCard">
       <img 
         className="rounded-xl w-full h-[180px] object-cover"
         src={CDN_URL + cloudinaryImageId}
@@ -36,7 +37,6 @@ const RestaurantCard = (props) => {
           <span className="text-gray-600">{sla?.slaString}</span>
         </div>
         <h4 className="text-gray-600 mt-2 font-medium">{costForTwo}</h4>
-        <h4>User:{loggedInUser}</h4>
       </div>
     </div>
   );
@@ -55,7 +55,4 @@ const RestaurantCard = (props) => {
       )
     }
   };
-  
-
-
 export default RestaurantCard;
