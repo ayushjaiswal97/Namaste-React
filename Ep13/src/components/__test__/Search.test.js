@@ -34,5 +34,26 @@ it("Should Search Res List for burger text input ", async () => {
 
     const searchAfterClick = screen.getAllByTestId("resCard");
     expect(searchAfterClick.length).toBe(3);
-});
+    });
+
+    it("Should Filtered Top Listed Restaurant", async () => {
+        await act(async () => 
+        render(
+            <BrowserRouter>
+                <Body />
+            </BrowserRouter>
+        ));
+
+        const cardsBeforeFilter = screen.getAllByTestId("resCard");
+        expect(cardsBeforeFilter.length).toBe(20);
+
+        const topRatedBtn = screen.getByRole("button", {name: "Top Rated Restaurants"});
+        fireEvent.click(topRatedBtn);
+
+        const cardsAfterFilter = screen.getAllByTestId("resCard");
+        expect(cardsAfterFilter.length).toBe(6);
+    });
+
+
+
 
