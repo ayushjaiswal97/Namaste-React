@@ -12,9 +12,11 @@ const ItemList = ({ items }) => {
     };  
     
     return(
-        <div className="grid gap-4 p-4">
+        <div
+         className="grid gap-4 p-4">
             {items.map((item) => (
-              <div key={item.card.info.id} 
+              <div data-testid="foodItems"
+              key={item.card.info.id} 
               className="flex justify-between p-6 m-4 border-b border-gray-200 rounded-lg transition-shadow duration-300 hover:shadow-lg">
                 <div className="flex-1 pr-6">
                   <div className="mb-4">
