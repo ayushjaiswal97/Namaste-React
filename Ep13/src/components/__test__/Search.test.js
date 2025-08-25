@@ -14,7 +14,7 @@ global.fetch = jest.fn(() => {
     });
 });
 
-it("Should Search Res List for burger text input ", async () => {
+    it("Should Search Res List for burger text input ", async () => {
     await act(async () => 
         render(
         <BrowserRouter>
@@ -53,7 +53,4 @@ it("Should Search Res List for burger text input ", async () => {
         const cardsAfterFilter = screen.getAllByTestId("resCard");
         expect(cardsAfterFilter.length).toBe(6);
     });
-
-
-
 
